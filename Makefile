@@ -4,9 +4,10 @@ CONDA=miniconda.sh
 
 OS := $(shell uname)
 ifeq ($(OS), Linux)
- 	URL := "https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh"
+ 	URL := "https://repo.continuum.io/miniconda/Miniconda2-4.5.12-Linux-x86_64.sh"
+else ifeq ($(OS), Darwin)
+ 	URL := "https://repo.continuum.io/miniconda/Miniconda2-4.5.12-MacOSX-x86_64.sh"
 endif
-
 
 $(CONDA):
 	curl $(URL) -o $(CONDA) 
@@ -14,7 +15,7 @@ $(CONDA):
 
 install: 
 	./$(CONDA) -b -p ./miniconda
-	./miniconda/bin/conda create --name notebook --file spec-file.txt
+	./miniconda/bin/conda env create --file environment.yml
 	
 clean:
 	rm -rf $(CONDA) miniconda
