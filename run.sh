@@ -6,6 +6,5 @@ if [ ! -d miniconda ]; then
 fi
 
 source miniconda/bin/activate notebook
-jupyter nbextension enable --py widgetsnbextension
 jupyter nbextension enable --py --sys-prefix widgetsnbextension
 jupyter notebook
