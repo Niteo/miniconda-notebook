@@ -10,7 +10,7 @@ else ifeq ($(OS), Darwin)
 endif
 
 $(CONDA):
-	curl $(URL) -o $(CONDA) 
+	curl $(URL) -L -o $(CONDA) 
 	chmod +x $(CONDA)
 
 install: 
