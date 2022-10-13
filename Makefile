@@ -4,9 +4,9 @@ CONDA=miniconda.sh
 
 OS := $(shell uname)
 ifeq ($(OS), Linux)
- 	URL := "https://repo.continuum.io/miniconda/Miniconda2-4.5.12-Linux-x86_64.sh"
+ 	URL := "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
 else ifeq ($(OS), Darwin)
- 	URL := "https://repo.continuum.io/miniconda/Miniconda2-4.5.12-MacOSX-x86_64.sh"
+ 	URL := "https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
 endif
 
 $(CONDA):
